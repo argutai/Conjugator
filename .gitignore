@@ -9,7 +9,7 @@ src/main/java/com/Spanish_conjugator/Conjugator.java
 src/main/java/com/Spanish_conjugator/IrregularVerb.java
 src/main/java/com/Spanish_conjugator/PresentEndings.java
 src/main/java/com/Spanish_conjugator/PresentIrregular.java
-src/main/java/com/Spanish_conjugator/PreseStemChanges.java
+src/main/java/com/Spanish_conjugator/PresentStemChanger.java
 src/main/java/com/Spanish_conjugator/ReflexivePronouns.java
 
 ### STS ###

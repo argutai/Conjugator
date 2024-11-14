@@ -4,7 +4,9 @@ I’m currently developing this REST API to practice functional programming and 
 
 ## How to use
 
-Run [Application.java](http://Application.java) to host API on localhost:8080
+```bash
+mvn spring-boot:run
+```
 
 ```bash
 curl -X POST http://localhost:8080/conjugate -H "Content-Type: application/json" -d @request.json

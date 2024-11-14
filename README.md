@@ -4,9 +4,12 @@ I’m currently developing this REST API to practice functional programming and 
 
 ## How to use
 
+Start REST API with
 ```bash
 mvn spring-boot:run
 ```
+
+Send a request by creating a request.json and pinging API
 
 ```bash
 curl -X POST http://localhost:8080/conjugate -H "Content-Type: application/json" -d @request.json

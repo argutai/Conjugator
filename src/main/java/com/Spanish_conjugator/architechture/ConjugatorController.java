@@ -1,12 +1,20 @@
 package com.Spanish_conjugator.architechture;
 
 
+import java.util.Optional;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ConjugatorController {
+
+    private final IrregularService IrregularService;
+
+    public ConjugatorController(IrregularService IrregularService) {
+        this.IrregularService = IrregularService;
+    }
 
     @PostMapping("/conjugate")
     public ConjugatedVerbResponse conjugateVerb(@RequestBody ConjugatorRequest request) {
@@ -16,18 +24,35 @@ public class ConjugatorController {
         String aspect = request.getAspect();
         String form = request.getForm();
 
-        // Add logic here to conjugate the verb based on the request parameters
-        // For example, a simple conjugation could look like:
         String conjugatedVerb = conjugate(verb, tense, mood, aspect, form);
         
         return new ConjugatedVerbResponse(conjugatedVerb);
     }
 
-    // Simple placeholder conjugation logic (you can replace this with more complex logic)
+
     private String conjugate(String verb, String tense, String mood, String aspect, String form) {
-        // Add your verb conjugation logic here
-        // For now, just return the verb as is (replace this logic as needed)
-        return verb + " conjugated in " + tense + " " + aspect + " " + mood + " (" + form + ")";
+        
+        // ToDo; logic between aspects, for now just simple aspect!!
+
+        // Get pronoun if reflexive
+        String pronoun = ""; // assume non-reflexive now
+        
+        // Return irregular if found:
+        Optional<String> irregularConjugation;
+        irregularConjugation = IrregularService.getIrregularConjugation(verb, form, tense);
+
+        if (irregularConjugation.isPresent()) {
+            return irregularConjugation.get();
+        }
+
+        // ToDo: get stem if stem-changing or not
+        // String stem = "bañ";
+
+        // ToDo: get regular verb ending
+        // String ending = "o";
+
+        // ToDo: put together to return pronoun + stem + ending;
+        return "place holder";
     }
 }
 

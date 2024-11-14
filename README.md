@@ -36,7 +36,7 @@ This will return payload of:
 
 ## Language Logic
 
-Each verb can be expressed in 6 tenses, across 3 different moods, across 3 aspects, for 6 forms (36 expressions).
+Each verb can be expressed in 6 tenses (present, preterite, imperfect, future, near future, conditional), across 3 different moods (indicative, subjunctive, imperative), across 4 aspects (simple, continuous, perfect, perfect continuous), for 6 forms (1s, 2s, 3s, 1p, 2p, 3p). This totals 36 expressions.
 
 The perfect is considered both a tense and an aspect, but due to its reliance on an auxiliary verb and its use across most tenses, I have chosen to organise it here as an aspect.
 
@@ -44,7 +44,7 @@ Constraints:
 
 - The preterite is not generally used in the perfect, where it is substituted for the pluperfect progressive (combination of imperfect with perfect continuous) or the imperfect progressive
 - The subjunctive does not exist in the preterite, near future, or conditional
-- The Indicative mood exists only in simple present and does not exist in the first person
+- The Indicative mood exists only in simple present, is split by affirmative and negative, and does not exist in the first person
 
 |  | Simple | Continuous / Progressive | Perfect | Perfect Continuous / Progressive |
 | --- | --- | --- | --- | --- |

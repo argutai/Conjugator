@@ -8,7 +8,6 @@ public class ConjugatorRequest {
     private String aspect;
     private String form;
     
-    // Getters and Setters
     public String getVerb() {
         return verb;
     }

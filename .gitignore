@@ -1,8 +1,14 @@
+# To remove: git rm --cached 
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+### Temporary test files
+request.json
+sendRequest.bash
 
 ### draft files
 src/main/java/com/Spanish_conjugator/Conjugator.java

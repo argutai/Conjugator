@@ -11,12 +11,7 @@ request.json
 sendRequest.bash
 
 ### draft files
-src/main/java/com/Spanish_conjugator/Conjugator.java
-src/main/java/com/Spanish_conjugator/IrregularVerb.java
-src/main/java/com/Spanish_conjugator/PresentEndings.java
-src/main/java/com/Spanish_conjugator/PresentIrregular.java
-src/main/java/com/Spanish_conjugator/PresentStemChanger.java
-src/main/java/com/Spanish_conjugator/ReflexivePronouns.java
+src/main/java/com/Spanish_conjugator/Archive
 
 ### STS ###
 .apt_generated

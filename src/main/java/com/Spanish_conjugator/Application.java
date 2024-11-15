@@ -1,4 +1,4 @@
-package com.Spanish_conjugator.architechture;
+package com.Spanish_conjugator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

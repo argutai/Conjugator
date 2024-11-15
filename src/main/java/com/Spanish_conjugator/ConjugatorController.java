@@ -1,4 +1,4 @@
-package com.Spanish_conjugator.architechture;
+package com.Spanish_conjugator;
 
 
 import java.util.Optional;
@@ -51,6 +51,7 @@ public class ConjugatorController {
         // ToDo: get regular verb ending
         // String ending = "o";
 
+        
         // ToDo: put together to return pronoun + stem + ending;
         return "place holder";
     }

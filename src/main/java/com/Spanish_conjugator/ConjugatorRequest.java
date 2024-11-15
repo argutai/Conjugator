@@ -1,4 +1,4 @@
-package com.Spanish_conjugator.architechture;
+package com.Spanish_conjugator;
 
 public class ConjugatorRequest {
     

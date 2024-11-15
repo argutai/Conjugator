@@ -1,11 +1,11 @@
-package com.Spanish_conjugator.architechture;
+package com.Spanish_conjugator;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.Spanish_conjugator.IrregularVerb;
+import com.Spanish_conjugator.Archive.IrregularVerb;
 import com.Spanish_conjugator.Irregulars.ImperfectIrregular;
 import com.Spanish_conjugator.Irregulars.PresentIrregular;
 import com.Spanish_conjugator.Irregulars.PreteriteIrregular;

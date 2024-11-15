@@ -2,7 +2,7 @@ package com.Spanish_conjugator.Irregulars;
 import java.util.List;
 import java.util.Map;
 
-import com.Spanish_conjugator.Archive.IrregularVerb;
+import com.Spanish_conjugator.IrregularVerb;
 
 public class ConditionalIrregular {
     

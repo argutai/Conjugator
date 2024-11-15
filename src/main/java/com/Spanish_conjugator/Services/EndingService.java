@@ -4,10 +4,10 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.Spanish_conjugator.Archive.PresentEndings;
 import com.Spanish_conjugator.RegularEndings.ConditionalEndings;
 import com.Spanish_conjugator.RegularEndings.FutureEndings;
 import com.Spanish_conjugator.RegularEndings.ImperfectEndings;
+import com.Spanish_conjugator.RegularEndings.PresentEndings;
 import com.Spanish_conjugator.RegularEndings.PreteriteEndings;
 
 @Service

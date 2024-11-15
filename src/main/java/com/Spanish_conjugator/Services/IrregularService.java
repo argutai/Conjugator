@@ -6,12 +6,13 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.Spanish_conjugator.Archive.IrregularVerb;
+import com.Spanish_conjugator.IrregularVerb;
 import com.Spanish_conjugator.Irregulars.ConditionalIrregular;
 import com.Spanish_conjugator.Irregulars.FutureIrregular;
 import com.Spanish_conjugator.Irregulars.ImperfectIrregular;
 import com.Spanish_conjugator.Irregulars.PresentIrregular;
 import com.Spanish_conjugator.Irregulars.PreteriteIrregular;
+
 @Service
 public class IrregularService {
 

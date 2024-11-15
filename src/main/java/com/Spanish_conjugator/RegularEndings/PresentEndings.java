@@ -2,6 +2,7 @@ package com.Spanish_conjugator.RegularEndings;
 
 import java.util.Map;
 
+
 public class PresentEndings {
     public static final Map<String, Map<String, String>> ENDING_MAP = Map.of(
         "1s", Map.of(

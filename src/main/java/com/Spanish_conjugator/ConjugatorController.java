@@ -3,18 +3,29 @@ package com.Spanish_conjugator;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Spanish_conjugator.Services.EndingService;
+import com.Spanish_conjugator.Services.IrregularService;
+import com.Spanish_conjugator.Services.ReflexiveService;
+import com.Spanish_conjugator.Services.StemService;
+
+
 @RestController
 public class ConjugatorController {
 
-    private final IrregularService IrregularService;
+    @Autowired
+    private IrregularService irregularService;
+    @Autowired
+    private StemService stemService;
+    @Autowired
+    private EndingService endingService;
+    @Autowired
+    private ReflexiveService reflexiveService;
 
-    public ConjugatorController(IrregularService IrregularService) {
-        this.IrregularService = IrregularService;
-    }
 
     @PostMapping("/conjugate")
     public ConjugatedVerbResponse conjugateVerb(@RequestBody ConjugatorRequest request) {
@@ -32,28 +43,32 @@ public class ConjugatorController {
 
     private String conjugate(String verb, String tense, String mood, String aspect, String form) {
         
-        // ToDo; logic between aspects, for now just simple aspect!!
+        // ToDo logic between aspects, for now just simple aspect!!
+
 
         // Get pronoun if reflexive
-        String pronoun = ""; // assume non-reflexive now
-        
+        String pronoun = reflexiveService.getPronoun(verb, form);
+        verb = reflexiveService.removeSe(verb, form);
+
         // Return irregular if found:
         Optional<String> irregularConjugation;
-        irregularConjugation = IrregularService.getIrregularConjugation(verb, form, tense);
+        irregularConjugation = irregularService.getIrregularConjugation(verb, form, tense);
 
         if (irregularConjugation.isPresent()) {
-            return irregularConjugation.get();
+            return pronoun + irregularConjugation.get();
         }
 
-        // ToDo: get stem if stem-changing or not
-        // String stem = "bañ";
 
-        // ToDo: get regular verb ending
-        // String ending = "o";
+        // Get stem if stem-changing or not
+        String stem = stemService.getStem(verb, form, tense); // returns verb with or without stem change
+
+
+        // Get regular verb ending
+        String ending = endingService.getEnding(tense, form, verb);
 
         
-        // ToDo: put together to return pronoun + stem + ending;
-        return "place holder";
+        // ToDo: pronoun + stem + ending
+        return pronoun + stem + ending;
     }
 }
 

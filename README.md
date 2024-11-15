@@ -36,7 +36,7 @@ This will return payload of:
 
 ## Language Logic
 
-Each verb can be expressed in 6 tenses (present, preterite, imperfect, future, near future, conditional), across 3 different moods (indicative, subjunctive, imperative), across 4 aspects (simple, continuous, perfect, perfect continuous), for 6 forms (1s, 2s, 3s, 1p, 2p, 3p). This totals 36 expressions.
+Each verb can be expressed in 6 tenses (present, preterite, imperfect, future, near future, conditional), across 3 different moods (indicative, subjunctive, imperative), across 4 aspects (simple, continuous, perfect, perfect continuous), for 6 forms (1s, 2s, 3s, 1p, 2p, 3p). 
 
 The perfect is considered both a tense and an aspect, but due to its reliance on an auxiliary verb and its use across most tenses, I have chosen to organise it here as an aspect.
 
@@ -59,33 +59,3 @@ Constraints:
 | Future Subjunctive | hablare | estuviere hablando | hubiere hablado | hubiere estado hablando |
 | Affirmative Imperative | (not for 1st person) | - | - | - |
 | Negative Imperative | (not for 1st person) | - | - | - |
-
-## Application logic
-
-Receive request JSON
-
-- tense defaults present
-- mood defaults indicative
-- aspect defaults simple
-- form must be defined
-
-- If combination not possible, send ‘combination invalid’
-- If code not complete for one option, send ‘tense not supported’
-
-Check if simple or non-simple aspect:
-
-for non-simple:
-
-- the pronoun is always at the beginning, except for in the near future and the affirmative imperative
-- if irregular, return
-- conjugate auxiliary verbs and add gerund or participle
-- find auxiliary verb(s)
-- return pronoun + auxiliary verb(s) + gerund or participle
-
-for the simple:
-
-- check if reflexive, store pronoun
-- check if irregular, return
-- check if stem changing, store stem in var
-- find get regular ending, store in var
-- return pronoun + stem + ending

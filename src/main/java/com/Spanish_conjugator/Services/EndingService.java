@@ -22,10 +22,10 @@ public class EndingService {
         "conditional", ConditionalEndings.ENDING_MAP
     );
 
-    public String getEnding(String tense, String person, String verb) {
+    public String getEnding(String tense, String form, String verb) {
         Map<String, Map<String, String>> endingMap = ENDING_RULES_BY_TENSE.getOrDefault(tense, Map.of());
 
-        return endingMap.getOrDefault(person, Map.of()) // get form
+        return endingMap.getOrDefault(form, Map.of()) // get form
                 .entrySet().stream()
                 .filter(entry -> verb.endsWith(entry.getKey())) // match verb ending (ar, er, ir)
                 .map(Map.Entry::getValue) // get ending

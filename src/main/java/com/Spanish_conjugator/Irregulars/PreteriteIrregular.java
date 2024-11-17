@@ -188,31 +188,8 @@ public class PreteriteIrregular {
         new IrregularVerb("creer", Map.of(
             "3s", "creyó",
             "3p", "creyeron"
-        )),
-
-        // o -> u
-        new IrregularVerb("morir", Map.of(
-            "3s", "murió",
-            "3p", "murieron"
-        )),
-        new IrregularVerb("dormir", Map.of(
-            "3s", "durmió",
-            "3p", "durmieron"
-        )),
-
-        // e -> i
-        new IrregularVerb("sentir", Map.of(
-            "3s", "sintió",
-            "3p", "sintieron"
-        )),
-        new IrregularVerb("preferir", Map.of(
-            "3s", "prefirió",
-            "3p", "prefirieron"
-        )),
-        new IrregularVerb("mentir", Map.of(
-            "3s", "mintió",
-            "3p", "mintieron"
         ))
+
     );
 
     public boolean getIrregular(String verb) {

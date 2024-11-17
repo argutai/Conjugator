@@ -22,24 +22,31 @@ public class StemService {
         "conditional", ConditionalStems.CONDITIONAL_STEM_CHANGE_RULES
     );
 
-    public String getStem(String verb, String person, String tense) {
-        // Default to present tense if tense is not found
+    public String getStem(String verb, String form, String tense) {
+        // ToDo: throw error if no tense, do not default to present
         Map<Function<String, String>, List<String>> stemChangeRules = STEM_CHANGE_RULES_BY_TENSE.getOrDefault(tense, PresentStems.PRESENT_STEM_CHANGE_RULES);
 
 
         String stem = verb;
         if (tense.equals("present") || tense.equals("imperfect") || tense.equals("preterite")) {
+            
             stem = verb.substring(0, verb.length() - 2);
 
-            // Boot rule: no stem change plural persons in present tense!!
-            if (person.equals("1p") || person.equals("2p")) {
-                return stem;
-            }
         }
-
+        
+        // Boot rule: no stem change plural forms in present tense
+        if (tense.equals("present") && (form.equals("1p") || form.equals("2p"))) {
+            return stem;
+        }
+        
+        // Stem changes in 3s and 3p verbs
+        if (tense.equals("preterite") && !form.equals("3s") && !form.equals("3s")) {
+            return stem;
+        }
+        
 
         String finalStem = stem;
-        // Apply stem changes based on the selected rules
+
         return stemChangeRules.entrySet().stream()
                 .filter(entry -> entry.getValue().contains(verb))
                 .map(entry -> entry.getKey().apply(finalStem))

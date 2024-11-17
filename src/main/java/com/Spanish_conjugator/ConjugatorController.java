@@ -1,30 +1,29 @@
 package com.Spanish_conjugator;
 
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Spanish_conjugator.Services.EndingService;
-import com.Spanish_conjugator.Services.IrregularService;
-import com.Spanish_conjugator.Services.ReflexiveService;
-import com.Spanish_conjugator.Services.StemService;
+import com.Spanish_conjugator.Aspects.ContinuousService;
+import com.Spanish_conjugator.Aspects.PerfectContinuousService;
+import com.Spanish_conjugator.Aspects.PerfectService;
+import com.Spanish_conjugator.Aspects.SimpleService;
+
 
 
 @RestController
 public class ConjugatorController {
 
     @Autowired
-    private IrregularService irregularService;
+    private SimpleService simpleService;
     @Autowired
-    private StemService stemService;
+    private PerfectService perfectService;
     @Autowired
-    private EndingService endingService;
+    private ContinuousService continuousService;
     @Autowired
-    private ReflexiveService reflexiveService;
+    private PerfectContinuousService perfectcontinuousService;
 
 
     @PostMapping("/conjugate")
@@ -35,39 +34,38 @@ public class ConjugatorController {
         String aspect = request.getAspect();
         String form = request.getForm();
 
-        String conjugatedVerb = conjugate(verb, tense, mood, aspect, form);
+        // handle other moods, not supported for now
+        if (!mood.equals("indicative")) {
+            throw new IllegalArgumentException("Unsupported mood: " + mood + ", check again soon");
+        }
         
-        return new ConjugatedVerbResponse(conjugatedVerb);
-    }
+        // Simple aspect
+        if (aspect.equals("simple")) {
+            String conjugatedVerb = simpleService.conjugate(verb, tense, mood, aspect, form);
+            return new ConjugatedVerbResponse(conjugatedVerb);
+        }  
 
+        // Perfect aspect
+        if (aspect.equals("perfect")) {
+            String conjugatedVerb = perfectService.conjugate(verb, tense, mood, aspect, form);
+            return new ConjugatedVerbResponse(conjugatedVerb);
+        }
 
-    private String conjugate(String verb, String tense, String mood, String aspect, String form) {
-        
-        // ToDo logic between aspects, for now just simple aspect!!
+        // Continuous aspect
+        if (aspect.equals("continous")) {
+            String conjugatedVerb = continuousService.conjugate(verb, tense, mood, aspect, form);
+            return new ConjugatedVerbResponse(conjugatedVerb);
+        }
 
-
-        // Get pronoun if reflexive
-        String pronoun = reflexiveService.getPronoun(verb, form);
-        verb = reflexiveService.removeSe(verb, form);
-
-        // Return irregular if found:
-        Optional<String> irregularConjugation = irregularService.getIrregularConjugation(verb, form, tense);
-
-        if (irregularConjugation.isPresent()) {
-            return pronoun + irregularConjugation.get();
+        // Perfect Continuous aspect
+        if (aspect.equals("perfect continuous")) {
+            String conjugatedVerb = perfectcontinuousService.conjugate(verb, tense, mood, aspect, form);
+            return new ConjugatedVerbResponse(conjugatedVerb);
         }
 
 
-        // Get stem if stem-changing or not
-        String stem = stemService.getStem(verb, form, tense); // returns verb with or without stem change
-
-
-        // Get regular verb ending
-        String ending = endingService.getEnding(tense, form, verb);
-
+        String conjugatedVerb = simpleService.conjugate(verb, tense, mood, aspect, form);
+        return new ConjugatedVerbResponse(conjugatedVerb);
         
-        // ToDo: pronoun + stem + ending
-        return pronoun + stem + ending;
     }
 }
-

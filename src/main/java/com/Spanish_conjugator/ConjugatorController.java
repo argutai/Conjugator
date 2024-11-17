@@ -51,8 +51,7 @@ public class ConjugatorController {
         verb = reflexiveService.removeSe(verb, form);
 
         // Return irregular if found:
-        Optional<String> irregularConjugation;
-        irregularConjugation = irregularService.getIrregularConjugation(verb, form, tense);
+        Optional<String> irregularConjugation = irregularService.getIrregularConjugation(verb, form, tense);
 
         if (irregularConjugation.isPresent()) {
             return pronoun + irregularConjugation.get();

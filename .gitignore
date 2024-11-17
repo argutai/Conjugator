@@ -1,10 +1,18 @@
 # To remove: git rm --cached 
 
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+
+### Pesky ones
+src/main/java/com/Spanish_conjugator/architechture
+src/main/java/com/Spanish_conjugator/architecture
+*.java~
+*.LCK
 
 ### Temporary test files
 request.json

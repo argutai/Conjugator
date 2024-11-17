@@ -5,7 +5,7 @@ import java.util.Map;
 public class GerundIrregulars {
 
     public static final Map<String, String> IRREGULAR_GERUNDS = Map.ofEntries(
-        // Stem-changing -ir verbs (e → i or o → u)
+        // Stem-changing ir verbs (e → i or o → u)
         Map.entry("decir", "diciendo"),
         Map.entry("dormir", "durmiendo"),
         Map.entry("morir", "muriendo"),
@@ -17,7 +17,7 @@ public class GerundIrregulars {
         Map.entry("servir", "sirviendo"),
         Map.entry("venir", "viniendo"),
         
-        // Spelling changes for verbs ending in -er and -ir with stems ending in a vowel
+        // Add y for vowel-ending stem verbs 
         Map.entry("caer", "cayendo"),
         Map.entry("construir", "construyendo"),
         Map.entry("creer", "creyendo"),

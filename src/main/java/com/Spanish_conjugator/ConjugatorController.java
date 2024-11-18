@@ -45,8 +45,11 @@ public class ConjugatorController {
         );
         
         
-        // handle other moods, not supported for now
-        if (!mood.equals("indicative")) {
+        // handle moods (just indicative and subjunctive)
+        if (mood.equals("subjunctive")) {
+            tense = "subjunctive " + tense;
+        }
+        if (!mood.equals("indicative") && !mood.equals("subjunctive")) {
             throw new IllegalArgumentException("Unsupported mood: " + mood + ", check again soon");
         }
         
@@ -54,10 +57,9 @@ public class ConjugatorController {
         // get AspectService for aspect and conjugate
         AspectService aspectService = aspectServiceMap.get(aspect);
         if (aspectService != null) {
-            String conjugatedVerb = aspectService.conjugate(verb, tense, mood, aspect, form);
+            String conjugatedVerb = aspectService.conjugate(verb, tense, form);
             return new ConjugatedVerbResponse(conjugatedVerb);
         } else {
-            // Handle invalid aspect if needed
             throw new IllegalArgumentException("Invalid aspect: " + aspect);
         }
 

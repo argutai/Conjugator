@@ -19,14 +19,14 @@ public class ContinuousService implements AspectService {
 
 
     @Override
-    public String conjugate(String verb, String tense, String mood, String aspect, String form) {
+    public String conjugate(String verb, String tense, String form) {
 
         // handle reflexive
         String pronoun = reflexiveService.getPronoun(verb, form);
         verb = reflexiveService.removeSe(verb, form);
 
         // conjugate estar
-        String auxillaryVerb = simpleService.conjugate("estar", tense, "indicative", "simple", form);
+        String auxillaryVerb = simpleService.conjugate("estar", tense, form);
 
         // get gerund
         String gerund = gerundService.getGerund(verb);

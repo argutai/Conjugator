@@ -19,14 +19,14 @@ public class PerfectService implements AspectService {
 
 
     @Override
-    public String conjugate(String verb, String tense, String mood, String aspect, String form) {
+    public String conjugate(String verb, String tense, String form) {
 
         // handle reflexive
         String pronoun = reflexiveService.getPronoun(verb, form);
         verb = reflexiveService.removeSe(verb, form);
 
         // conjugate haber
-        String auxillaryVerb = simpleService.conjugate("haber", tense, "indicative", "simple", form);
+        String auxillaryVerb = simpleService.conjugate("haber", tense, form);
 
         // get participle 
         String participle = participleService.getParticiple(verb);

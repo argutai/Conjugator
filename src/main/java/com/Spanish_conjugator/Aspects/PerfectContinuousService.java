@@ -22,14 +22,14 @@ public class PerfectContinuousService implements AspectService {
 
 
     @Override
-    public String conjugate(String verb, String tense, String mood, String aspect, String form) {
+    public String conjugate(String verb, String tense, String form) {
 
         // handle reflexive
         String pronoun = reflexiveService.getPronoun(verb, form);
         verb = reflexiveService.removeSe(verb, form);
 
         // conjugate haber
-        String perfectAuxillaryVerb = simpleService.conjugate("haber", tense, "indicative", "simple", form);
+        String perfectAuxillaryVerb = simpleService.conjugate("haber", tense, form);
 
         // conjugate estar
         String ContinuousAuxillaryVerb = participleService.getParticiple("estar");

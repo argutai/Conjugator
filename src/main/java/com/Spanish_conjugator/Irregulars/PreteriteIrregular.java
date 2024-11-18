@@ -17,6 +17,14 @@ public class PreteriteIrregular {
             "2p", "hicisteis",
             "3p", "hicieron"
         )),
+        new IrregularVerb("haber", Map.of(
+            "1s", "hube", 
+            "2s", "hubiste", 
+            "3s", "hubo",
+            "1p", "hubimos",
+            "2p", "hubisteis",
+            "3p", "hubieron"
+        )),
         new IrregularVerb("rehacer", Map.of(
             "1s", "rehice", 
             "2s", "rehiciste", 

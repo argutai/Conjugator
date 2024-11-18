@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.Spanish_conjugator.Aspects.SimpleService;
 import com.Spanish_conjugator.StemChanges.ConditionalStems;
 import com.Spanish_conjugator.StemChanges.FutureStems;
 import com.Spanish_conjugator.StemChanges.PresentStems;
@@ -14,6 +16,10 @@ import com.Spanish_conjugator.StemChanges.PreteriteStems;
 
 @Service
 public class StemService {
+    
+    @Autowired
+    private SimpleService simpleService;
+    
 
     private static final Map<String, Map<Function<String, String>, List<String>>> STEM_CHANGE_RULES_BY_TENSE = Map.of(
         "present", PresentStems.PRESENT_STEM_CHANGE_RULES,
@@ -26,12 +32,20 @@ public class StemService {
         // ToDo: throw error if no tense, do not default to present
         Map<Function<String, String>, List<String>> stemChangeRules = STEM_CHANGE_RULES_BY_TENSE.getOrDefault(tense, PresentStems.PRESENT_STEM_CHANGE_RULES);
 
-
         String stem = verb;
-        if (tense.equals("present") || tense.equals("imperfect") || tense.equals("preterite")) {
-            
-            stem = verb.substring(0, verb.length() - 2);
 
+        if (tense.equals("present") || tense.equals("imperfect") || tense.equals("preterite")) {
+            stem = verb.substring(0, verb.length() - 2);
+        }
+
+        if (tense.equals("subjunctive present")) {
+            String present1s = simpleService.conjugate(verb, "present", "1s");
+            stem = present1s.substring(0, present1s.length() - 1);
+        }
+        
+        if (tense.equals("subjunctive imperfect") || tense.equals("subjunctive future")) {
+            stem = simpleService.conjugate(verb, "preterite", "3p");
+            stem = stem.substring(0, stem.length() - 3);
         }
         
         // Boot rule: no stem change plural forms in present tense
@@ -44,7 +58,6 @@ public class StemService {
             return stem;
         }
         
-
         String finalStem = stem;
 
         return stemChangeRules.entrySet().stream()

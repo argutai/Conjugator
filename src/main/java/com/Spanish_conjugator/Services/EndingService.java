@@ -9,6 +9,9 @@ import com.Spanish_conjugator.RegularEndings.FutureEndings;
 import com.Spanish_conjugator.RegularEndings.ImperfectEndings;
 import com.Spanish_conjugator.RegularEndings.PresentEndings;
 import com.Spanish_conjugator.RegularEndings.PreteriteEndings;
+import com.Spanish_conjugator.RegularEndings.SubjunctiveFutureEndings;
+import com.Spanish_conjugator.RegularEndings.SubjunctiveImperfectEndings;
+import com.Spanish_conjugator.RegularEndings.SubjunctivePresentEndings;
 
 @Service
 public class EndingService {
@@ -16,6 +19,9 @@ public class EndingService {
 
     private static final Map<String, Map<String, Map<String, String>>> ENDING_RULES_BY_TENSE = Map.of(
         "present", PresentEndings.ENDING_MAP,
+        "subjunctive present", SubjunctivePresentEndings.ENDING_MAP,
+        "subjunctive imperfect", SubjunctiveImperfectEndings.ENDING_MAP,
+        "subjunctive future", SubjunctiveFutureEndings.ENDING_MAP,
         "preterite", PreteriteEndings.ENDING_MAP,
         "imperfect", ImperfectEndings.ENDING_MAP,
         "future", FutureEndings.ENDING_MAP,

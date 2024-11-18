@@ -12,6 +12,9 @@ import com.Spanish_conjugator.Irregulars.FutureIrregular;
 import com.Spanish_conjugator.Irregulars.ImperfectIrregular;
 import com.Spanish_conjugator.Irregulars.PresentIrregular;
 import com.Spanish_conjugator.Irregulars.PreteriteIrregular;
+import com.Spanish_conjugator.Irregulars.SubjunctiveFutureIrregular;
+import com.Spanish_conjugator.Irregulars.SubjunctiveImperfectIrregular;
+import com.Spanish_conjugator.Irregulars.SubjunctivePresentIrregular;
 
 @Service
 public class IrregularService {
@@ -43,6 +46,15 @@ public class IrregularService {
             }
             case "conditional" -> {
                 return ConditionalIrregular.IRREGULAR_VERBS;
+            }
+            case "subjunctive present" -> {
+                return SubjunctivePresentIrregular.IRREGULAR_VERBS;
+            }
+            case "subjunctive imperfect" -> {
+                return SubjunctiveImperfectIrregular.IRREGULAR_VERBS;
+            }
+            case "subjunctive future" -> {
+                return SubjunctiveFutureIrregular.IRREGULAR_VERBS;
             }
             default -> throw new IllegalArgumentException("Unsupported tense: " + tense);
         }

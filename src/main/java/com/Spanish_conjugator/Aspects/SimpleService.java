@@ -24,6 +24,7 @@ public class SimpleService implements AspectService {
     private ReflexiveService reflexiveService;
 
 
+    @Override
     public String conjugate(String verb, String tense, String mood, String aspect, String form) {
 
         // handle reflexive

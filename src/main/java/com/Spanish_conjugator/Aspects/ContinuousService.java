@@ -18,6 +18,7 @@ public class ContinuousService implements AspectService {
     private GerundService gerundService;
 
 
+    @Override
     public String conjugate(String verb, String tense, String mood, String aspect, String form) {
 
         // handle reflexive

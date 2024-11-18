@@ -8,7 +8,7 @@ import com.Spanish_conjugator.Services.ReflexiveService;
 
 
 @Service
-public class ContinuousService {
+public class ContinuousService implements AspectService {
 
     @Autowired
     private SimpleService simpleService;

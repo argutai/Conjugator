@@ -12,7 +12,7 @@ import com.Spanish_conjugator.Services.StemService;
 
 
 @Service
-public class SimpleService {
+public class SimpleService implements AspectService {
 
     @Autowired
     private IrregularService irregularService;

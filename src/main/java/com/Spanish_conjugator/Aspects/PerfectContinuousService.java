@@ -9,7 +9,7 @@ import com.Spanish_conjugator.Services.ReflexiveService;
 
 
 @Service
-public class PerfectContinuousService {
+public class PerfectContinuousService implements AspectService {
 
     @Autowired
     private SimpleService simpleService;

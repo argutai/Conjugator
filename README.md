@@ -53,7 +53,7 @@ Constraints:
 | Imperfect | hablaba | estaba hablando | había hablado | había estado hablando |
 | Future | hablaré | estaré hablando | habré hablado | habré estado hablando |
 | Near Future | voy a hablar | voy a estar hablando  | voy a haber hablado | voy a haber estado hablando |
-| Conditional | hablaría | estaría hablando | hubiera hablado | hubiera estado hablando |
+| Conditional | hablaría | estaría hablando | habría hablado | habría estado hablando |
 | Present Subjunctive | hable | esté hablando | haya hablado | haya estado hablando |
 | Imperfect Subjunctive | hablara / hablase | estuviera hablando / hablase | hubiera hablado | hubiera estado hablando |
 | Future Subjunctive | hablare | estuviere hablando | hubiere hablado | hubiere estado hablando |

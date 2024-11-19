@@ -51,8 +51,8 @@ public class ConjugatorController {
             if (!tense.equals("present")) {
                 throw new IllegalArgumentException("Imperative mood is only allowed with the present tense.");
             }
-            if (form.equals("1s") || form.equals("1p")) {
-                throw new IllegalArgumentException("Imperative mood is not allowed for 1st person singular or plural.");
+            if (form.equals("1s")) {
+                throw new IllegalArgumentException("Imperative mood is not allowed for 1st person singular.");
             }
             if (!aspect.equals("simple")) {
                 throw new IllegalArgumentException("Imperative mood only exists in the simple aspect");

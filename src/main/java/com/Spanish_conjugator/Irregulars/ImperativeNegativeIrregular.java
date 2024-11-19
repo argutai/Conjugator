@@ -9,116 +9,116 @@ public class ImperativeNegativeIrregular {
 
     public static final List<IrregularVerb> IRREGULAR_VERBS = List.of(
         new IrregularVerb("ser", Map.of(
-            "2s", "no seas",    // 2nd person singular
-            "3s", "no sea",     // 3rd person singular
-            "1p", "no seamos",  // 1st person plural (nosotros)
-            "2p", "no seáis",   // 2nd person plural (vosotros)
-            "3p", "no sean"     // 3rd person plural
+            "2s", "seas", 
+            "3s", "sea",
+            "1p", "seamos",
+            "2p", "seáis", 
+            "3p", "sean"
         )),
         new IrregularVerb("ir", Map.of(
-            "2s", "no vayas",
-            "3s", "no vaya",
-            "1p", "no vayamos", // 1st person plural (nosotros)
-            "2p", "no vayáis",
-            "3p", "no vayan"
+            "2s", "vayas",
+            "3s", "vaya",
+            "1p", "vayamos",
+            "2p", "vayáis",
+            "3p", "vayan"
         )),
         new IrregularVerb("hacer", Map.of(
-            "2s", "no hagas",
-            "3s", "no haga",
-            "1p", "no hagamos", // 1st person plural (nosotros)
-            "2p", "no hagáis",
-            "3p", "no hagan"
+            "2s", "hagas",
+            "3s", "haga",
+            "1p", "hagamos",
+            "2p", "hagáis",
+            "3p", "hagan"
         )),
         new IrregularVerb("decir", Map.of(
-            "2s", "no digas",
-            "3s", "no diga",
-            "1p", "no digamos", // 1st person plural (nosotros)
-            "2p", "no digáis",
-            "3p", "no digan"
+            "2s", "digas",
+            "3s", "diga",
+            "1p", "digamos",
+            "2p", "digáis",
+            "3p", "digan"
         )),
         new IrregularVerb("tener", Map.of(
-            "2s", "no tengas",
-            "3s", "no tenga",
-            "1p", "no tengamos", // 1st person plural (nosotros)
-            "2p", "no tengáis",
-            "3p", "no tengan"
+            "2s", "tengas",
+            "3s", "tenga",
+            "1p", "tengamos",
+            "2p", "tengáis",
+            "3p", "tengan"
         )),
         new IrregularVerb("venir", Map.of(
-            "2s", "no vengas",
-            "3s", "no venga",
-            "1p", "no vengamos", // 1st person plural (nosotros)
-            "2p", "no vengáis",
-            "3p", "no vengan"
+            "2s", "vengas",
+            "3s", "venga",
+            "1p", "vengamos",
+            "2p", "vengáis",
+            "3p", "vengan"
         )),
         new IrregularVerb("salir", Map.of(
-            "2s", "no salgas",
-            "3s", "no salga",
-            "1p", "no salgamos", // 1st person plural (nosotros)
-            "2p", "no salgáis",
-            "3p", "no salgan"
+            "2s", "salgas",
+            "3s", "salga",
+            "1p", "salgamos",
+            "2p", "salgáis",
+            "3p", "salgan"
         )),
         new IrregularVerb("poner", Map.of(
-            "2s", "no pongas",
-            "3s", "no ponga",
-            "1p", "no pongamos", // 1st person plural (nosotros)
-            "2p", "no pongáis",
-            "3p", "no pongan"
+            "2s", "pongas",
+            "3s", "ponga",
+            "1p", "pongamos",
+            "2p", "pongáis",
+            "3p", "pongan"
         )),
         new IrregularVerb("dar", Map.of(
-            "2s", "no des",
-            "3s", "no dé",
-            "1p", "no demos",    // 1st person plural (nosotros)
-            "2p", "no deis",
-            "3p", "no den"
+            "2s", "des",
+            "3s", "dé",
+            "1p", "demos",  
+            "2p", "deis",
+            "3p", "den"
         )),
         new IrregularVerb("ver", Map.of(
-            "2s", "no veas",
-            "3s", "no vea",
-            "1p", "no veamos",   // 1st person plural (nosotros)
-            "2p", "no veáis",
-            "3p", "no vean"
+            "2s", "veas",
+            "3s", "vea",
+            "1p", "veamos", 
+            "2p", "veáis",
+            "3p", "vean"
         )),
         new IrregularVerb("oír", Map.of(
-            "2s", "no oigas",
-            "3s", "no oiga",
-            "1p", "no oigamos",  // 1st person plural (nosotros)
-            "2p", "no oigáis",
-            "3p", "no oigan"
+            "2s", "oigas",
+            "3s", "oiga",
+            "1p", "oigamos",
+            "2p", "oigáis",
+            "3p", "oigan"
         )),
         new IrregularVerb("saber", Map.of(
-            "2s", "no sepas",
-            "3s", "no sepa",
-            "1p", "no sepamos",  // 1st person plural (nosotros)
-            "2p", "no sepáis",
-            "3p", "no sepan"
+            "2s", "sepas",
+            "3s", "sepa",
+            "1p", "sepamos",
+            "2p", "sepáis",
+            "3p", "sepan"
         )),
         new IrregularVerb("caber", Map.of(
-            "2s", "no quepas",
-            "3s", "no quepa",
-            "1p", "no quepamos", // 1st person plural (nosotros)
-            "2p", "no quepáis",
-            "3p", "no quepan"
+            "2s", "quepas",
+            "3s", "quepa",
+            "1p", "quepamos",
+            "2p", "quepáis",
+            "3p", "quepan"
         )),
         new IrregularVerb("traer", Map.of(
-            "2s", "no traigas",
-            "3s", "no traiga",
-            "1p", "no traigamos", // 1st person plural (nosotros)
-            "2p", "no traigáis",
-            "3p", "no traigan"
+            "2s", "traigas",
+            "3s", "traiga",
+            "1p", "traigamos",
+            "2p", "traigáis",
+            "3p", "traigan"
         )),
         new IrregularVerb("conducir", Map.of(
-            "2s", "no conduzcas",
-            "3s", "no conduzca",
-            "1p", "no conduzcamos", // 1st person plural (nosotros)
-            "2p", "no conduzcáis",
-            "3p", "no conduzcan"
+            "2s", "conduzcas",
+            "3s", "conduzca",
+            "1p", "conduzcamos",
+            "2p", "conduzcáis",
+            "3p", "conduzcan"
         )),
         new IrregularVerb("traducir", Map.of(
-            "2s", "no traduzcas",
-            "3s", "no traduzca",
-            "1p", "no traduzcamos", // 1st person plural (nosotros)
-            "2p", "no traduzcáis",
-            "3p", "no traduzcan"
+            "2s", "traduzcas",
+            "3s", "traduzca",
+            "1p", "traduzcamos",
+            "2p", "traduzcáis",
+            "3p", "traduzcan"
         ))
     );
 }

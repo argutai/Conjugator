@@ -27,6 +27,13 @@ public class SimpleService implements AspectService {
     @Override
     public String conjugate(String verb, String tense, String form) {
 
+        String negative = "";
+
+        // handle negative
+        if (tense.equals("imperative negative present")) {
+            negative = "no ";
+        }
+
         // handle reflexive
         String pronoun = reflexiveService.getPronoun(verb, form);
         verb = reflexiveService.removeSe(verb, form);
@@ -34,7 +41,7 @@ public class SimpleService implements AspectService {
         // handle irregular
         Optional<String> irregularConjugation = irregularService.getIrregularConjugation(verb, form, tense);
         if (irregularConjugation.isPresent()) {
-            return pronoun + irregularConjugation.get();
+            return negative + pronoun + irregularConjugation.get();
         }
 
         // get stem
@@ -43,6 +50,6 @@ public class SimpleService implements AspectService {
         // get ending
         String ending = endingService.getEnding(tense, form, verb);
 
-        return pronoun + stem + ending;
+        return negative + pronoun + stem + ending;
     }
 }

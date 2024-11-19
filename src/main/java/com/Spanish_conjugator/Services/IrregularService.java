@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.Spanish_conjugator.IrregularVerb;
 import com.Spanish_conjugator.Irregulars.ConditionalIrregular;
 import com.Spanish_conjugator.Irregulars.FutureIrregular;
+import com.Spanish_conjugator.Irregulars.ImperativeNegativeIrregular;
+import com.Spanish_conjugator.Irregulars.ImperativePositiveIrregular;
 import com.Spanish_conjugator.Irregulars.ImperfectIrregular;
 import com.Spanish_conjugator.Irregulars.PresentIrregular;
 import com.Spanish_conjugator.Irregulars.PreteriteIrregular;
@@ -55,6 +57,12 @@ public class IrregularService {
             }
             case "subjunctive future" -> {
                 return SubjunctiveFutureIrregular.IRREGULAR_VERBS;
+            }
+            case "imperative positive present" -> {
+                return ImperativePositiveIrregular.IRREGULAR_VERBS;
+            }
+            case "imperative negative present" -> {
+                return ImperativeNegativeIrregular.IRREGULAR_VERBS;
             }
             default -> throw new IllegalArgumentException("Unsupported tense: " + tense);
         }

@@ -36,7 +36,7 @@ public class StemService {
 
         String stem = verb;
 
-        if (tense.equals("present") || tense.equals("imperfect") || tense.equals("preterite")) {
+        if (tense.equals("present") || tense.equals("imperfect") || tense.equals("preterite") || tense.equals("imperative positive present") || tense.equals("imperative negative present")) {
             stem = verb.substring(0, verb.length() - 2);
         }
 

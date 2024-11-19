@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.Spanish_conjugator.RegularEndings.ConditionalEndings;
 import com.Spanish_conjugator.RegularEndings.FutureEndings;
+import com.Spanish_conjugator.RegularEndings.ImperativeNegativeEndings;
+import com.Spanish_conjugator.RegularEndings.ImperativePositiveEndings;
 import com.Spanish_conjugator.RegularEndings.ImperfectEndings;
 import com.Spanish_conjugator.RegularEndings.PresentEndings;
 import com.Spanish_conjugator.RegularEndings.PreteriteEndings;
@@ -25,7 +27,9 @@ public class EndingService {
         "preterite", PreteriteEndings.ENDING_MAP,
         "imperfect", ImperfectEndings.ENDING_MAP,
         "future", FutureEndings.ENDING_MAP,
-        "conditional", ConditionalEndings.ENDING_MAP
+        "conditional", ConditionalEndings.ENDING_MAP,
+        "imperative positive present", ImperativePositiveEndings.ENDING_MAP,
+        "imperative negative present", ImperativeNegativeEndings.ENDING_MAP
     );
 
     public String getEnding(String tense, String form, String verb) {

@@ -45,11 +45,31 @@ public class ConjugatorController {
         );
         
         
-        // handle moods (just indicative and subjunctive)
-        if (mood.equals("subjunctive")) {
-            tense = "subjunctive " + tense;
+        // handle moods
+        // Imperative
+        if (mood.equals("imperative negative") || mood.equals("imperative positive")) {
+            if (!tense.equals("present")) {
+                throw new IllegalArgumentException("Imperative mood is only allowed with the present tense.");
+            }
+            if (form.equals("1s") || form.equals("1p")) {
+                throw new IllegalArgumentException("Imperative mood is not allowed for 1st person singular or plural.");
+            }
+            if (!aspect.equals("simple")) {
+                throw new IllegalArgumentException("Imperative mood only exists in the simple aspect");
+            }
+            tense = mood + " " + tense;
+        } 
+
+        // Subjunctive
+        else if (mood.equals("subjunctive")) {
+            if (!tense.equals("present") && !tense.equals("imperfect") && !tense.equals("future")) {
+                throw new IllegalArgumentException("Invalid tense for subjunctive mood: " + tense + ". Only 'present', 'imperfect', and 'future' exist in the subjunctive mood.");
+            }
+            tense = mood + " " + tense;
         }
-        if (!mood.equals("indicative") && !mood.equals("subjunctive")) {
+
+        // Indicative
+        else if (!mood.equals("indicative")) {
             throw new IllegalArgumentException("Unsupported mood: " + mood + ", check again soon");
         }
         

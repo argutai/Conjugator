@@ -6,7 +6,7 @@ import java.util.function.Function;
 
 public class ImperfectStems {
 
-    public static final Map<Function<String, String>, List<String>> PRETERITE_STEM_CHANGE_RULES = Map.of(
+    public static final Map<Function<String, String>, List<String>> IMPERFECT_STEM_CHANGE_RULES = Map.of(
     );
 
 }

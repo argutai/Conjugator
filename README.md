@@ -46,6 +46,8 @@ Constraints:
 - The subjunctive does not exist in the preterite, near future, or conditional
 - The Indicative mood exists only in simple present, is split by affirmative and negative, and does not exist in the first person
 
+Below is an example for the verb hablar in the first person form:
+
 |  | Simple | Continuous / Progressive | Perfect | Perfect Continuous / Progressive |
 | --- | --- | --- | --- | --- |
 | Present | hablo | estoy hablando | he hablado | he estado hablando |

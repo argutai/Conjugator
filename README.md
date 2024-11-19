@@ -44,7 +44,7 @@ Constraints:
 
 - The preterite is not generally used in the perfect, where it is substituted for the pluperfect progressive (combination of imperfect with perfect continuous) or the imperfect progressive
 - The subjunctive does not exist in the preterite, near future, or conditional
-- The Indicative mood exists only in simple present, is split by affirmative and negative, and does not exist in the first person
+- The Indicative mood exists only in simple present, is split by affirmative and negative, and does not exist for the first person singular form
 
 Below is an example for the verb hablar in the first person form:
 

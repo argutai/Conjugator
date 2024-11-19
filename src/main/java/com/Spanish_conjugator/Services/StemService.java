@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.Spanish_conjugator.Aspects.SimpleService;
 import com.Spanish_conjugator.StemChanges.ConditionalStems;
 import com.Spanish_conjugator.StemChanges.FutureStems;
+import com.Spanish_conjugator.StemChanges.ImperfectStems;
 import com.Spanish_conjugator.StemChanges.PresentStems;
 import com.Spanish_conjugator.StemChanges.PreteriteStems;
 
@@ -25,7 +26,8 @@ public class StemService {
         "present", PresentStems.PRESENT_STEM_CHANGE_RULES,
         "preterite", PreteriteStems.PRETERITE_STEM_CHANGE_RULES,
         "future", FutureStems.FUTURE_STEM_CHANGE_RULES,
-        "conditional", ConditionalStems.CONDITIONAL_STEM_CHANGE_RULES
+        "conditional", ConditionalStems.CONDITIONAL_STEM_CHANGE_RULES,
+        "imperfect", ImperfectStems.IMPERFECT_STEM_CHANGE_RULES
     );
 
     public String getStem(String verb, String form, String tense) {
@@ -44,8 +46,13 @@ public class StemService {
         }
         
         if (tense.equals("subjunctive imperfect") || tense.equals("subjunctive future")) {
-            stem = simpleService.conjugate(verb, "preterite", "3p");
-            stem = stem.substring(0, stem.length() - 3);
+            String preterite3p= simpleService.conjugate(verb, "preterite", "3p");
+            stem = preterite3p.substring(0, preterite3p.length() - 3);
+
+            // accent change for 1p
+            if (form.equals("1p")) {
+                stem = AccentAdder.replaceFinalLetter(stem);
+            }
         }
         
         // Boot rule: no stem change plural forms in present tense
@@ -61,9 +68,9 @@ public class StemService {
         String finalStem = stem;
 
         return stemChangeRules.entrySet().stream()
-                .filter(entry -> entry.getValue().contains(verb))
-                .map(entry -> entry.getKey().apply(finalStem))
-                .findFirst()
-                .orElse(finalStem); // Return original stem if no match
+            .filter(entry -> entry.getValue().contains(verb))
+            .map(entry -> entry.getKey().apply(finalStem))
+            .findFirst()
+            .orElse(finalStem); // Return original stem if no match
     }
 }

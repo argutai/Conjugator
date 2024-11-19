@@ -171,5 +171,234 @@ class SimpleServiceTest {
         String result = simpleService.conjugate("levantarse", "subjunctive future", "1p");
         assertEquals("nos levantáremos", result);
     }
-    
+
+
+    @Test
+    void testImperativePositive2sSer() {
+        String result = simpleService.conjugate("ser", "imperative positive present", "2s");
+        assertEquals("sé", result);
+    }
+
+    @Test
+    void testImperativePositive3sSer() {
+        String result = simpleService.conjugate("ser", "imperative positive present", "3s");
+        assertEquals("sea", result);
+    }
+
+    @Test
+    void testImperativePositive2sComer() {
+        String result = simpleService.conjugate("comer", "imperative positive present", "2s");
+        assertEquals("come", result);
+    }
+
+    @Test
+    void testImperativePositive3sComer() {
+        String result = simpleService.conjugate("comer", "imperative positive present", "3s");
+        assertEquals("coma", result);
+    }
+
+    @Test
+    void testImperativePositive1pComer() {
+        String result = simpleService.conjugate("comer", "imperative positive present", "1p");
+        assertEquals("comamos", result);
+    }
+
+    @Test
+    void testImperativePositive2pComer() {
+        String result = simpleService.conjugate("comer", "imperative positive present", "2p");
+        assertEquals("comed", result);
+    }
+
+    @Test
+    void testImperativePositive3pComer() {
+        String result = simpleService.conjugate("comer", "imperative positive present", "3p");
+        assertEquals("coman", result);
+    }
+
+    @Test
+    void testImperativePositive2sHablar() {
+        String result = simpleService.conjugate("hablar", "imperative positive present", "2s");
+        assertEquals("habla", result);
+    }
+
+    @Test
+    void testImperativePositive3sHablar() {
+        String result = simpleService.conjugate("hablar", "imperative positive present", "3s");
+        assertEquals("hable", result);
+    }
+
+    @Test
+    void testImperativePositive1pHablar() {
+        String result = simpleService.conjugate("hablar", "imperative positive present", "1p");
+        assertEquals("hablemos", result);
+    }
+
+    @Test
+    void testImperativePositive2pHablar() {
+        String result = simpleService.conjugate("hablar", "imperative positive present", "2p");
+        assertEquals("hablad", result);
+    }
+
+    @Test
+    void testImperativePositive3pHablar() {
+        String result = simpleService.conjugate("hablar", "imperative positive present", "3p");
+        assertEquals("hablen", result);
+    }
+
+    @Test
+    void testImperativePositive2sTener() {
+        String result = simpleService.conjugate("tener", "imperative positive present", "2s");
+        assertEquals("ten", result);
+    }
+
+    @Test
+    void testImperativePositive3sTener() {
+        String result = simpleService.conjugate("tener", "imperative positive present", "3s");
+        assertEquals("tenga", result);
+    }
+
+    @Test
+    void testImperativePositive1pTener() {
+        String result = simpleService.conjugate("tener", "imperative positive present", "1p");
+        assertEquals("tengamos", result);
+    }
+
+    @Test
+    void testImperativePositive2pTener() {
+        String result = simpleService.conjugate("tener", "imperative positive present", "2p");
+        assertEquals("tened", result);
+    }
+
+    @Test
+    void testImperativePositive3pTener() {
+        String result = simpleService.conjugate("tener", "imperative positive present", "3p");
+        assertEquals("tengan", result);
+    }
+
+    @Test
+    void testImperativePositive2sEscribir() {
+        String result = simpleService.conjugate("escribir", "imperative positive present", "2s");
+        assertEquals("escribe", result);
+    }
+
+    @Test
+    void testImperativePositive3sEscribir() {
+        String result = simpleService.conjugate("escribir", "imperative positive present", "3s");
+        assertEquals("escriba", result);
+    }
+
+    @Test
+    void testImperativePositive1pEscribir() {
+        String result = simpleService.conjugate("escribir", "imperative positive present", "1p");
+        assertEquals("escribamos", result);
+    }
+
+    @Test
+    void testImperativePositive2pEscribir() {
+        String result = simpleService.conjugate("escribir", "imperative positive present", "2p");
+        assertEquals("escribid", result);
+    }
+
+    @Test
+    void testImperativePositive3pEscribir() {
+        String result = simpleService.conjugate("escribir", "imperative positive present", "3p");
+        assertEquals("escriban", result);
+    }
+
+    @Test
+    void testImperativeNegative2sSer() {
+        String result = simpleService.conjugate("ser", "imperative negative present", "2s");
+        assertEquals("no seas", result);
+    }
+
+    @Test
+    void testImperativeNegative3sSer() {
+        String result = simpleService.conjugate("ser", "imperative negative present", "3s");
+        assertEquals("no sea", result);
+    }
+
+    @Test
+    void testImperativeNegative2sComer() {
+        String result = simpleService.conjugate("comer", "imperative negative present", "2s");
+        assertEquals("no comas", result);
+    }
+
+    @Test
+    void testImperativeNegative3sComer() {
+        String result = simpleService.conjugate("comer", "imperative negative present", "3s");
+        assertEquals("no coma", result);
+    }
+
+    @Test
+    void testImperativeNegative1pComer() {
+        String result = simpleService.conjugate("comer", "imperative negative present", "1p");
+        assertEquals("no comamos", result);
+    }
+
+    @Test
+    void testImperativeNegative2pComer() {
+        String result = simpleService.conjugate("comer", "imperative negative present", "2p");
+        assertEquals("no comáis", result);
+    }
+
+    @Test
+    void testImperativeNegative3pComer() {
+        String result = simpleService.conjugate("comer", "imperative negative present", "3p");
+        assertEquals("no coman", result);
+    }
+
+    @Test
+    void testImperativeNegative2sHablar() {
+        String result = simpleService.conjugate("hablar", "imperative negative present", "2s");
+        assertEquals("no hables", result);
+    }
+
+    @Test
+    void testImperativeNegative3sHablar() {
+        String result = simpleService.conjugate("hablar", "imperative negative present", "3s");
+        assertEquals("no hable", result);
+    }
+
+    @Test
+    void testImperativeNegative1pHablar() {
+        String result = simpleService.conjugate("hablar", "imperative negative present", "1p");
+        assertEquals("no hablemos", result);
+    }
+
+    @Test
+    void testImperativeNegative2pHablar() {
+        String result = simpleService.conjugate("hablar", "imperative negative present", "2p");
+        assertEquals("no habléis", result);
+    }
+
+    @Test
+    void testImperativeNegative3pHablar() {
+        String result = simpleService.conjugate("hablar", "imperative negative present", "3p");
+        assertEquals("no hablen", result);
+    }
+
+    @Test
+    void testImperativeNegative2sTener() {
+        String result = simpleService.conjugate("tener", "imperative negative present", "2s");
+        assertEquals("no tengas", result);
+    }
+
+    @Test
+    void testImperativeNegative3sTener() {
+        String result = simpleService.conjugate("tener", "imperative negative present", "3s");
+        assertEquals("no tenga", result);
+    }
+
+    @Test
+    void testImperativeNegative1pTener() {
+        String result = simpleService.conjugate("tener", "imperative negative present", "1p");
+        assertEquals("no tengamos", result);
+    }
+
+    @Test
+    void testImperativeNegative2pTener() {
+        String result = simpleService.conjugate("tener", "imperative negative present", "2p");
+        assertEquals("no tengáis", result);
+    }
+
 }

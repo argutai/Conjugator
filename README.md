@@ -1,6 +1,6 @@
 # Spanish Verb Conjugator
 
-I’m currently developing this REST API to practice functional programming and Spring Boot and as a learning device to study Spanish. This can be used as a REST API or as a microservice connected to another frontend microservice.
+I developed this REST API to practice functional programming and Spring Boot and as a learning device to study Spanish. This can be used as a REST API or as a microservice connected to another frontend microservice.
 
 ## How to use
 

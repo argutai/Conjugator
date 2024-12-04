@@ -1,6 +1,6 @@
 # Spanish Verb Conjugator
 
-Google translate wont cut it when translating many sentences from english to Spanish. For example, if I want to translate "I went to the beach", google will default to the preterite even if I am speaking about a habitual occurance, because the imperfect does not exist in English. This API is perfect for someone you has an understanding of tenses, aspects, and moods, and wants an easy way to conjugate and implement this service in a distributed solution.
+Google translate wont cut it when translating many sentences from english to Spanish. For example, if I want to translate "I went to the beach", google will default to the preterite even if I am speaking about a habitual occurance, because the imperfect does not exist in English. This API is perfect for someone who has an understanding of tenses, aspects, and moods, and wants an easy way to conjugate and implement this service in a distributed solution.
 
 I developed this REST API with a functional programming paradigm using Spring Boot for myself as a learning device to study Spanish. This can be used as a REST API or as a microservice connected to another frontend microservice.
 
